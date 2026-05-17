@@ -2,28 +2,28 @@ import java.util.*;
 
 public class Graph {
 
-    // Adjacency list representation
+
     private Map<Integer, List<Integer>> adjacencyList;
 
     public Graph() {
         adjacencyList = new HashMap<>();
     }
 
-    // Add vertex to graph
+
     public void addVertex(Vertex v) {
         adjacencyList.putIfAbsent(v.getId(), new ArrayList<>());
     }
 
-    // Add edge between vertices
+
     public void addEdge(int from, int to) {
 
         adjacencyList.get(from).add(to);
 
-        // Undirected graph
+
         adjacencyList.get(to).add(from);
     }
 
-    // Print graph structure
+
     public void printGraph() {
 
         for (int vertex : adjacencyList.keySet()) {
@@ -38,7 +38,7 @@ public class Graph {
         }
     }
 
-    // Breadth-First Search
+
     public void bfs(int start) {
 
         Set<Integer> visited = new HashSet<>();
@@ -66,7 +66,7 @@ public class Graph {
         System.out.println();
     }
 
-    // Depth-First Search
+
     public void dfs(int start) {
 
         Set<Integer> visited = new HashSet<>();
@@ -76,7 +76,7 @@ public class Graph {
         System.out.println();
     }
 
-    // Recursive DFS helper method
+
     private void dfsRecursive(int current, Set<Integer> visited) {
 
         visited.add(current);
